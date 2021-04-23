@@ -1,7 +1,7 @@
 import React from "react";
 import { View } from "react-native";
 
-function BlockRGB(props) {
+export default function BlockRGB(props) {
  return (
    <View
      style={{
