@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { StyleSheet, Text, View, FlatList } from "react-native";
+import React, { useState, useEffect } from "react";
+import { StyleSheet, Text, View, FlatList, Button, } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
 import BlockRGB from "./components/BlockRGB";
@@ -63,13 +63,24 @@ function DetailsScreen({ route }) {
  );
 }
 
+
 const Stack = createStackNavigator();
 
 export default function App() {
  return (
    <NavigationContainer>
      <Stack.Navigator>
-       <Stack.Screen name="Colour List" component={HomeScreen} />
+       <Stack.Screen name="Colour List" component={HomeScreen}
+       options={{
+         headerRight: () => (
+          <Button
+          onPress={() => alert('This is a button!')}
+          title="Add Colour"
+          color="#00cc00"
+        />
+         ),
+       }} 
+       />
        <Stack.Screen name="DetailsScreen" component={DetailsScreen} />
      </Stack.Navigator>
    </NavigationContainer>
