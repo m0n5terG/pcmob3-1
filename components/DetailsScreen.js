@@ -1,5 +1,5 @@
-import React from "react";
-import { Text, View, StyleSheet } from "react-native";
+import React, {  } from "react";
+import { StyleSheet, View, Text } from "react-native";
 
 export default function DetailsScreen({ route }) {
  
@@ -22,18 +22,21 @@ export default function DetailsScreen({ route }) {
    }
 
    const styles = StyleSheet.create({
+
     container: {
       flex: 1,
       backgroundColor: "#fff",
       alignItems: "center",
       justifyContent: "center",
     },
-    
+   
+    list: {
+      height: 500,
+      width: 500,
+   },
+   
     detailText: {
       fontSize: 24,
       marginBottom: 20,
-    },
+   },
    });
-   
-   
-   
