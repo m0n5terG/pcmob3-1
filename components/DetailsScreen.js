@@ -36,6 +36,8 @@ export default function DetailsScreen({ route }) {
    },
    
     detailText: {
+      color: "white",
+      textShadowColor: "#8c8c8c",
       fontSize: 24,
       marginBottom: 20,
    },

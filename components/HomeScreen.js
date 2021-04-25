@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { StyleSheet, View, FlatList, TouchableOpacity, Button } from "react-native";
+import { StyleSheet, View, FlatList, TouchableOpacity, Button, Text } from "react-native";
 import BlockRGB from "./BlockRGB";
+import { Foundation } from '@expo/vector-icons';
 
 export default function HomeScreen({ navigation }) {
  
     const [colorArray, setColorArray] = useState([]);
+
   
     useEffect (() => {
       navigation.setOptions({
@@ -34,14 +36,24 @@ export default function HomeScreen({ navigation }) {
       },
     ]);
   }
+
+  function clearScreen() {
+    setColorArray([]);
+  }
+  
   
   return (
     <View style={styles.container}>
+      <TouchableOpacity
+      style={{ height: 40, justifyContent: "center"}}
+      onPress={clearScreen}>
+        <Foundation name="page-delete" size={24} color="black" />
+      </TouchableOpacity>
       <FlatList 
        style={styles.list} 
        data={colorArray} 
        renderItem={renderItem}
-       numColumns={8} />
+       numColumns={6} />
      </View>
    );
   }
@@ -56,8 +68,10 @@ const styles = StyleSheet.create({
     },
    
     list: {
-      height: 500,
-      width: 500,
+      aspectRatio: 1,
+      flex: 1,
+      paddingLeft: 130,
+      paddingRight: 10,
    },
    
    });
