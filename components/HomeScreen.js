@@ -64,14 +64,12 @@ const styles = StyleSheet.create({
       flex: 1,
       backgroundColor: "#fff",
       alignItems: "center",
-      justifyContent: "center",
+      
     },
    
     list: {
-      aspectRatio: 1,
       flex: 1,
-      paddingLeft: 130,
-      paddingRight: 10,
+      
    },
    
    });
